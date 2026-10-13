@@ -1,21 +1,23 @@
 {
-  ".article_status": "Status artykułu",
-  "article_status": {
-    "corrected": "Poprawiony",
-    "deleted": "Usunięty",
-    "published": "Opublikowany",
-    "rejected": "Odrzucony",
-    "sent": "Wyślij do recenzji"
-  },
   "articles": {
+    "banner_unavailable": "Brak banera",
     "empty": "Brak artykułów"
   },
   "chat": {
+    "active": "Aktywny",
+    "close_chat_description": "Po zamknięciu czatu uczestnicy nie będą mogli wysyłać wiadomości.",
+    "closed_at": "Data zamknięcia",
     "connection_closed": "Połączenie zamknięte",
     "connection_closing": "Zamykanie połączenia",
     "connection_connecting": "Łączenie",
     "connection_open": "Połączono",
-    "connection_uninstantiated": "Połączenie nierozpoczęte"
+    "connection_uninstantiated": "Połączenie nierozpoczęte",
+    "created_at": "Data utworzenia",
+    "details_title": "Szczegóły czatu",
+    "inactive": "Nieaktywny",
+    "info_section": "Informacje o czacie",
+    "participants": "Uczestnicy",
+    "status": "Status"
   },
   "chat_list": {
     "delete_accessibility_label": "Usuń czat {{name}}",
@@ -24,10 +26,20 @@
     "fetch_error_title": "Nie udało się pobrać czatów",
     "loading": "Ładujemy listę czatów...",
     "no_messages": "Brak wiadomości",
+    "participants_close": "Zamknij",
+    "participants_empty": "Brak uczestników",
+    "participants_hint": "Przytrzymaj, aby zobaczyć uczestników czatu",
+    "participants_title": "Uczestnicy czatu",
     "waiting_description": "Formularz jest już wysłany. Poinformujemy Cię, gdy pojawi się dostępny czat.",
     "waiting_title": "Jeszcze nikt nie został przydzielony"
   },
   "common": {
+    "email_confirmation_screen": {
+      "change_email_or_login": "Zmień adres e-mail lub zaloguj się",
+      "description": "Wysłaliśmy link aktywacyjny na adres e-mail podany przy rejestracji. Kliknij go, aby utworzyć nowe konto. Jeśli nie możesz go znaleźć, sprawdź folder spam.",
+      "footer": "Email nie dotarł lub link został już kliknięty?",
+      "title": "Sprawdź swoją skrzynkę"
+    },
     "login_screen": {
       "description": "Zaloguj się na swoje konto",
       "email": "Adres email",
@@ -37,6 +49,10 @@
       "no_account": "Nie masz konta?",
       "password": "Hasło",
       "return": "Powrót"
+    },
+    "password_input": {
+      "hide": "Ukryj hasło",
+      "show": "Pokaż hasło"
     },
     "register_screen": {
       "confirm_password": "Powtórz hasło",
@@ -49,6 +65,9 @@
       "register_activation_note": "Sprawdź swój adres e-mail, aby aktywować konto.",
       "register_success": "Rejestracja przebiegła pomyślnie",
       "username": "Nazwa użytkownika"
+    },
+    "reset_password": {
+      "send_email": "Wyślij link resetujący"
     },
     "success": "sukces",
     "welcome_screen": {
@@ -194,6 +213,32 @@
     "rejected": "Odrzucone",
     "waited": "Oczekujące"
   },
+  "form_submission_success": {
+    "cta": "Powrót na stronę główną",
+    "footer": "Dziękujemy za zaufanie!",
+    "inbox_body": "Pamiętaj, że mail może wpaść do SPAMU, więc szukaj go również tam.",
+    "inbox_title": "Sprawdź skrzynkę",
+    "loading": "Sprawdzamy status formularza...",
+    "logout": "Wyloguj się",
+    "next_body": "Zaglądaj na naszą stronę, gdy pojawi się w górnym menu zakładka „CZAT” – wszystko poszło dobrze. Gdybyś miał jakiekolwiek problemy z czatem pisz do nas na: kontakt@fundacjaperyskop.org",
+    "next_title": "Co dalej",
+    "subtitle": "To wszystko! Już wkrótce otrzymasz informacje na twój adres email, gdy znajdziemy dla Ciebie wolontariusza.",
+    "timing_body": "Obojętne, czy wybrałeś/aś opcję luźnej wymiany wiadomości czy umówionych spotkań – nie spodziewaj się odpowiedzi na czasie od razu, lecz dopiero w przeciągu kilku dni od przypisania do danego wolontariusza.",
+    "timing_title": "Kiedy pojawi się odpowiedź",
+    "title": "Dziękujemy za wypełnienie formularza!"
+  },
+  "getting_started": {
+    "card_intro": "Nie musisz znać odpowiedzi ani wiedzieć, od czego zacząć. Wystarczy, że napiszesz tyle, ile chcesz — resztą zajmiemy się razem.",
+    "cta": "Rozmawiaj teraz",
+    "footer": "Dziękujemy, że jesteś.",
+    "headline": "Jeśli wypełniasz ten formularz, to znaczy, że coś Cię porusza. I to już wystarczy.",
+    "logout": "Wyloguj się",
+    "paragraph_1": "Po wysłaniu formularza przydzielimy Ci wolontariusza, z którym będziesz rozmawiać na czacie w regularnych odstępach czasu.",
+    "paragraph_2": "Ty decydujesz, czy wolisz wiadomości asynchroniczne, czy rozmowę w ustalonych terminach. To również Ty wyznaczasz tempo i granice rozmowy.",
+    "section_title": "Regularny kontakt na czacie",
+    "subtitle": "Zanim przejdziesz dalej, prosimy o chwilę uwagi",
+    "title": "Ważna informacja"
+  },
   "navigation": {
     "chats": "Czaty",
     "home": "Główna",
@@ -209,6 +254,13 @@
     "volunteer_subtitle": "Dołącz do grona wolontariuszy i pomagaj innym",
     "volunteer_title": "Wolontariusz"
   },
+  "roles": {
+    "ADMIN": "Administrator",
+    "REDACTOR": "Redaktor",
+    "USER": "Podopieczny",
+    "VOLUNTEER": "Wolontariusz",
+    "VOLUNTEERSUPERVISOR": "Superwizor"
+  },
   "session": {
     "logging_in": "Trwa logowanie...",
     "restore_error": "Nie udało się odtworzyć sesji"
@@ -223,9 +275,33 @@
     "permission_denied": "Brak dostępu do galerii. Zmień ustawienia w systemie.",
     "photo_error": "Nie udało się zmienić zdjęcia profilowego.",
     "photo_saved": "Zdjęcie profilowe zostało zaktualizowane",
+    "save": "Zapisz",
     "save_error": "Nie udało się zapisać profilu. Spróbuj ponownie.",
     "saved": "Profil został zapisany",
     "title": "Ustawienia"
+  },
+  "terms": {
+    "accepted": "Regulamin został zaakceptowany",
+    "intro": "Korzystając z aplikacji Fundacji Peryskop, akceptujesz poniższy regulamin. Zapoznaj się z nim uważnie — opisuje on zasady korzystania z aplikacji, charakter udzielanego wsparcia oraz sposób przetwarzania Twoich danych.",
+    "section1_content": "Aplikacja jest narzędziem Fundacji Peryskop umożliwiającym kontakt z wolontariuszami udzielającymi darmowego wsparcia psychologicznego. Korzystanie z aplikacji jest dobrowolne i bezpłatne.",
+    "section1_title": "Postanowienia ogólne",
+    "section2_content": "Wsparcie udzielane w aplikacji ma charakter wsparcia psychologicznego i nie zastępuje diagnozy ani leczenia prowadzonego przez lekarza czy psychoterapeutę. Jeśli potrzebujesz profesjonalnej pomocy, skonsultuj się ze specjalistą.",
+    "section2_title": "Charakter wsparcia",
+    "section3_content": "Rozmowy odbywają się na czacie — asynchronicznie lub w uzgodnionych terminach. Uczestnicy zobowiązują się do kulturalnego zachowania, szacunku wobec rozmówców oraz zachowania poufności treści rozmów.",
+    "section3_title": "Zasady rozmów",
+    "section4_content": "Aplikacja nie jest kanałem interwencji kryzysowej. W sytuacji zagrożenia życia lub zdrowia zadzwoń pod numer alarmowy 112 lub skorzystaj z Telefonicznej Pomocy Psychologicznej pod numerem 116 123.",
+    "section4_title": "Bezpieczeństwo i interwencja kryzysowa",
+    "section5_content": "Administratorem Twoich danych osobowych jest Fundacja Peryskop. Dane przetwarzamy wyłącznie w celu świadczenia usług opisanych w regulaminie, zgodnie z RODO. Masz prawo dostępu do swoich danych, ich sprostowania oraz usunięcia.",
+    "section5_title": "Dane osobowe",
+    "section6_content": "W sprawach nieuregulowanych regulaminem mają zastosowanie przepisy prawa polskiego. Pytania dotyczące regulaminu kieruj na adres kontakt@fundacjaperyskop.org.",
+    "section6_title": "Postanowienia końcowe",
+    "title": "Regulamin"
+  },
+  "user": {
+    "chat_with": {
+      "volunteer": "Rozmawiaj z wolontariuszem"
+    },
+    "wait_for_chat": "Oczekiwanie na czat"
   },
   "validation": {
     "age": {
@@ -248,6 +324,7 @@
     "name": {
       "tooShort": "Imię musi mieć co najmniej 2 znaki"
     },
+    "passwords_mismatch": "Hasła nie są identyczne",
     "passwords_must_match": "Hasła muszą być takie same",
     "phone": "Podaj poprawny numer telefonu",
     "required": "To pole jest wymagane"

@@ -1,21 +1,24 @@
 import { Redirect } from "expo-router";
 import { ActivityIndicator, View } from "react-native";
 import { useUser } from "@/modules/auth/components/AuthContextProvider";
+import AppBackground from "@/modules/shared/components/App-Background";
 
 export default function Index() {
     const { user, isLoading } = useUser();
 
     if (isLoading) {
         return (
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-            >
-                <ActivityIndicator size="large" />
-            </View>
+            <AppBackground>
+                <View
+                    style={{
+                        flex: 1,
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <ActivityIndicator size="large" />
+                </View>
+            </AppBackground>
         );
     }
 

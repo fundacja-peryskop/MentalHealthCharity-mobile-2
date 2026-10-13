@@ -78,6 +78,18 @@ export interface MenteeFormValues {
     source: string;
 }
 
+export interface MenteeFormPayload {
+    age: number;
+    name: string;
+    contacts: FormOption[];
+    description: string;
+    contact_preference: "scheduled" | "asynchronous";
+    phone?: number;
+    email: string;
+    tos: boolean;
+    source: string;
+}
+
 export interface MenteeForm {
     age: string;
     name: string;
@@ -92,7 +104,8 @@ export interface MenteeForm {
 
 export interface Form<T> {
     fields: T;
-    message?: string;
+    message?: string | null;
+    notes?: FormNote;
     form_type: formTypes;
 }
 

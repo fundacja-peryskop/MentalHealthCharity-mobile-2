@@ -13,14 +13,49 @@ import {
     View,
 } from "react-native";
 import { useUser } from "@/modules/auth/components/AuthContextProvider";
-import ArticleCard from "@/modules/articles/components/ArticleCard";
+import { Avatar, Button, Article, Typography } from "@fundacja-peryskop/ui";
 import { articlesByUserQueryOptions } from "@/modules/articles/queries/articleByUserQueryOptions";
 import AppBackground from "@/modules/shared/components/App-Background";
-import CustomButton from "@/modules/shared/components/Button";
 import { useToast } from "@/modules/shared/components/Toast";
 import getPublicProfileQuery from "@/modules/users/queries/getPublicProfileQuery";
 import updateAvatarMutation from "@/modules/users/queries/updateAvatarMutation";
 import updatePublicProfileMutation from "@/modules/users/queries/updatePublicProfileMutation";
+import { Article as ArticleType } from "@/modules/articles/types";
+
+const ArticleCard = ({ article }: { article: ArticleType }) => (
+    <Article className="w-full bg-[#f4f5f7] rounded-xl overflow-hidden">
+        <Article.Banner className="h-40 bg-slate-300">
+            {article.banner_url ? (
+                <Image
+                    source={{ uri: article.banner_url }}
+                    className="w-full h-full"
+                    resizeMode="cover"
+                    onError={({ nativeEvent }) =>
+                        console.warn(
+                            `Failed to load article banner: ${article.banner_url}`,
+                            nativeEvent?.error,
+                        )
+                    }
+                />
+            ) : null}
+        </Article.Banner>
+        <Article.Content className="p-4 pt-3 gap-2">
+            <View className="bg-[#00c4a7] px-2 py-1 rounded self-start">
+                <Typography variant="smallSemibold" className="text-white">
+                    {article.article_category.name}
+                </Typography>
+            </View>
+
+            <Typography variant="title3" className="text-[#142333]" numberOfLines={2}>
+                {article.title}
+            </Typography>
+
+            <Typography variant="regularRegular" className="text-slate-700" numberOfLines={2}>
+                {article.content}
+            </Typography>
+        </Article.Content>
+    </Article>
+);
 
 const SettingsScreen = () => {
     const { user, logout } = useUser();
@@ -129,30 +164,17 @@ const SettingsScreen = () => {
 
                 <View className="mb-4 gap-4 rounded-lg bg-white/95 p-4">
                     <View className="items-center gap-2">
-                        <TouchableOpacity
-                            activeOpacity={0.8}
+                        <Avatar
+                            src={avatarUrl}
+                            name={user?.full_name}
+                            size={96}
+                            ring
                             onPress={handlePickImage}
                             disabled={avatarMutation.isPending}
-                            className="items-center"
-                        >
-                            {avatarUrl ? (
-                                <Image
-                                    source={{ uri: avatarUrl }}
-                                    className="h-24 w-24 rounded-full border-2 border-[#00c4a7] bg-slate-200"
-                                />
-                            ) : (
-                                <View className="h-24 w-24 items-center justify-center rounded-full border-2 border-[#00c4a7] bg-slate-200">
-                                    <Text className="text-3xl font-bold text-slate-500">
-                                        {user?.full_name
-                                            ?.charAt(0)
-                                            .toUpperCase()}
-                                    </Text>
-                                </View>
-                            )}
-                            <Text className="mt-2 text-sm font-medium text-[#00c4a7]">
-                                {t("settings.change_photo")}
-                            </Text>
-                        </TouchableOpacity>
+                        />
+                        <Text className="mt-2 text-sm font-medium text-[#00c4a7]">
+                            {t("settings.change_photo")}
+                        </Text>
 
                         <View className="items-center gap-1">
                             <Text className="text-xl font-bold text-slate-900">
@@ -178,13 +200,14 @@ const SettingsScreen = () => {
                         textAlignVertical="top"
                         className="min-h-[100px] rounded-md border-2 border-[#C5C6CC] p-3 text-slate-900"
                     />
-                    <CustomButton
-                        title="settings.save"
+                    <Button
                         variant="primary"
-                        width="full"
+                        fullWidth
                         disabled={saveProfileMutation.isPending}
                         onPress={handleSaveProfile}
-                    />
+                    >
+                        {t("settings.save")}
+                    </Button>
                 </View>
 
                 <View className="mb-4 gap-3 rounded-lg bg-white/95 p-4">
@@ -219,14 +242,15 @@ const SettingsScreen = () => {
                     )}
                 </View>
 
-                <CustomButton
-                    title="settings.logout"
-                    variant="error"
-                    width="full"
+                <Button
+                    variant="danger"
+                    fullWidth
                     onPress={() => {
                         void logout();
                     }}
-                />
+                >
+                    {t("settings.logout")}
+                </Button>
             </ScrollView>
         </AppBackground>
     );

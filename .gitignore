@@ -42,3 +42,5 @@ yarn-error.*
 .tamagui/
 
 app-example
+.env
+.npmrc

@@ -1,10 +1,12 @@
-﻿import AuthScreenNavigation from "@/modules/auth/components/AuthScreenNavigation";
-import { router } from "expo-router";
+﻿import { router } from "expo-router";
 import { Formik } from "formik";
 import { useTranslation } from "react-i18next";
-import { Pressable, Text, TextInput, View } from "react-native";
 import * as Yup from "yup";
 import { LoginPayload } from "../../types";
+import { FormGroup, Input, Link, Typography } from "@fundacja-peryskop/ui";
+import { ScrollView, View } from "react-native";
+import AuthScreenNavigation from "@/modules/auth/components/AuthScreenNavigation";
+import PasswordInput from "@/modules/auth/components/PasswordInput";
 
 interface ILoginFormProps {
     onSubmit: (values: LoginPayload) => void;
@@ -28,7 +30,7 @@ const LoginForm = ({ onSubmit }: ILoginFormProps) => {
     });
 
     return (
-        <View className="flex-1">
+        <View className="flex-1 ">
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -43,79 +45,90 @@ const LoginForm = ({ onSubmit }: ILoginFormProps) => {
                     touched,
                 }) => (
                     <View className="flex-1 flex-col justify-between">
-                        <View className="gap-4 ">
-                            <View className="gap-1  ">
-                                <TextInput
-                                    className="rounded-2xl border border-[#C5C6CC] w-full p-4"
-                                    value={values.email}
+                        <ScrollView
+                            className="flex-1 px-6"
+                            contentContainerClassName="gap-4 pb-4"
+                            keyboardShouldPersistTaps="handled"
+                            showsVerticalScrollIndicator={false}
+                        >
+                            <FormGroup className="gap-4">
+                                <Input
+                                    label={t("common.login_screen.email")}
                                     placeholder={t("common.login_screen.email")}
+                                    value={values.email}
                                     onChangeText={handleChange("email")}
                                     onBlur={handleBlur("email")}
+                                    error={
+                                        touched.email && errors.email
+                                            ? errors.email
+                                            : undefined
+                                    }
                                 />
-                                {touched.email && errors.email && (
-                                    <Text className="text-red-500 text-sm">
-                                        {errors.email}
-                                    </Text>
-                                )}
-                            </View>
-
-                            <View className="gap-1">
-                                <TextInput
-                                    className="rounded-2xl border border-[#C5C6CC] w-full p-4"
-                                    value={values.password}
+                                <PasswordInput
+                                    label={t("common.login_screen.password")}
                                     placeholder={t(
                                         "common.login_screen.password",
                                     )}
+                                    value={values.password}
                                     onChangeText={handleChange("password")}
                                     onBlur={handleBlur("password")}
-                                    secureTextEntry
+                                    error={
+                                        touched.password && errors.password
+                                            ? errors.password
+                                            : undefined
+                                    }
                                 />
-                                {touched.password && errors.password && (
-                                    <Text className="text-red-500 text-sm">
-                                        {errors.password}
-                                    </Text>
-                                )}
-                            </View>
+                            </FormGroup>
+
                             <View className="flex flex-row justify-between items-center">
-                                <Pressable
+                                <Link
+                                    href="/reset-password"
                                     onPress={() =>
-                                        router.navigate("/reset-password")
+                                        router.push("/reset-password")
                                     }
                                 >
-                                    <Text className="border-b border-[#71727A] text-[#71727A] text-sm">
+                                    <Typography
+                                        variant="smallRegular"
+                                        className="text-primary border-b border-primary"
+                                    >
                                         {t(
                                             "common.login_screen.forgot_password",
                                         )}
-                                    </Text>
-                                </Pressable>
+                                    </Typography>
+                                </Link>
 
                                 <View className="flex-row items-center gap-1">
-                                    <Text className="text-[#71727A] text-sm">
-                                        {t("common.login_screen.no_account")}
-                                    </Text>
-                                    <Pressable
-                                        onPress={() =>
-                                            router.navigate("/sign-up")
-                                        }
+                                    <Typography
+                                        variant="smallRegular"
+                                        className="text-slate-500"
                                     >
-                                        <Text className="text-[#2BB5A0] font-semibold text-sm">
-                                            {t("common.register_screen.register")}
-                                        </Text>
-                                    </Pressable>
+                                        {t("common.login_screen.no_account")}
+                                    </Typography>
+                                    <Link
+                                        href="/sign-up"
+                                        onPress={() => router.push("/sign-up")}
+                                    >
+                                        <Typography
+                                            variant="smallSemibold"
+                                            className="text-primary"
+                                        >
+                                            {t(
+                                                "common.register_screen.register",
+                                            )}
+                                        </Typography>
+                                    </Link>
                                 </View>
                             </View>
-                        </View>
+                        </ScrollView>
 
-                        <View className="bg-[#E6FFFA]">
-                            <AuthScreenNavigation
-                                submitTitle={t("common.login_screen.login")}
-                                onSubmit={handleSubmit}
-                                cancelTitle={t("common.login_screen.return")}
-                                onReturn={() => {
-                                    router.navigate("/welcome-screen");
-                                }}
-                            />
-                        </View>
+                        <AuthScreenNavigation
+                            submitTitle={t("common.login_screen.login")}
+                            onSubmit={handleSubmit}
+                            cancelTitle={t("common.login_screen.return")}
+                            onReturn={() => {
+                                router.navigate("/welcome-screen");
+                            }}
+                        />
                     </View>
                 )}
             </Formik>

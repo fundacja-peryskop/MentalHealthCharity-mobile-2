@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "804363852197",
+    "project_id": "fundacjaperyskop-mobile-app",
+    "storage_bucket": "fundacjaperyskop-mobile-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804363852197:android:f0e207f9ac380eb719704c",
+        "android_client_info": {
+          "package_name": "fundacjaperyskop_mobile_app.v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQdp1g41LTAyFeurKIxQ0uGhHg-cJc33o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

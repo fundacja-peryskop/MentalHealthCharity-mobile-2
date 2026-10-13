@@ -3,6 +3,12 @@ import { url } from "@/api";
 import { Article, ReadArticlesByUserOptions } from "../types";
 import { Pagination } from "../../shared/types";
 import handleApiError from "../../shared/helpers/handleApiError";
+import resolveBannerUrl from "../helpers/resolveBannerUrl";
+
+const withResolvedBannerUrls = (article: Article): Article => ({
+    ...article,
+    banner_url: resolveBannerUrl(article.banner_url),
+});
 
 export const articlesByUserQueryOptions = (
     options: ReadArticlesByUserOptions,
@@ -20,7 +26,13 @@ export const articlesByUserQueryOptions = (
                     await handleApiError(data);
                 }
 
-                return data;
+                const items = Array.isArray(data?.items)
+                    ? data.items
+                    : Array.isArray(data)
+                      ? data
+                      : [];
+
+                return { ...data, items: items.map(withResolvedBannerUrls) };
             } catch (error) {
                 console.error("Error fetching articles:", error);
                 throw error;

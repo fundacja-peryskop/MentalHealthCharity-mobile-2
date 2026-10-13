@@ -3,6 +3,14 @@ module.exports = function (api) {
 
     return {
         presets: ["babel-preset-expo", "nativewind/babel"],
-        plugins: [],
+        plugins: [
+            [
+                "@tamagui/babel-plugin",
+                {
+                    components: ["tamagui", "@fundacja-peryskop/ui"],
+                    config: "./node_modules/@fundacja-peryskop/ui/dist/cjs/config/tamagui.config.js",
+                },
+            ],
+        ],
     };
 };

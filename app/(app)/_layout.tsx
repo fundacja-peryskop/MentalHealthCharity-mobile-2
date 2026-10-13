@@ -41,21 +41,25 @@ export default function ProtectedLayout() {
         }
 
         const currentRoute = segments[1];
-        const alreadyOnForm =
-            currentRoute === "mentee-form" || currentRoute === "volunteer-form";
+        const onboardingRoutes = [
+            "mentee-getting-started",
+            "pick-role",
+            "mentee-form",
+            "volunteer-form",
+            "form-submission-success",
+        ];
+
+        const isOnboardingRoute =
+            currentRoute !== undefined &&
+            onboardingRoutes.includes(currentRoute);
 
         if (
             user?.user_role === Roles.USER &&
             inProtectedGroup &&
-            !alreadyOnForm
+            !isOnboardingRoute &&
+            (canSendMentee || canSendVolunteer)
         ) {
-            if (canSendMentee && canSendVolunteer) {
-                router.replace("/pick-role");
-            } else if (canSendMentee) {
-                router.replace("/mentee-form");
-            } else if (canSendVolunteer) {
-                router.replace("/volunteer-form");
-            }
+            router.replace("/(app)/mentee-getting-started");
         }
     }, [
         user,

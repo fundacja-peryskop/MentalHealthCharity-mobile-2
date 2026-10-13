@@ -2,7 +2,7 @@ import { url } from "../../../api";
 import getAuthHeaders from "../../auth/helpers/getAuthHeaders";
 import Errors from "../../shared/constants";
 import { ErrorMessage } from "../../shared/types";
-import { Form, MenteeForm, VolunteerForm } from "../types";
+import { Form, MenteeForm, MenteeFormPayload, VolunteerForm } from "../types";
 
 const extractServerMessage = (body: string): string | undefined => {
     try {
@@ -33,7 +33,7 @@ const extractServerMessage = (body: string): string | undefined => {
 };
 
 const sendFormMutation = async (
-    payload: Form<MenteeForm | VolunteerForm>,
+    payload: Form<MenteeFormPayload | VolunteerForm>,
 ): Promise<Form<MenteeForm | VolunteerForm> | undefined> => {
     const headers = getAuthHeaders();
 

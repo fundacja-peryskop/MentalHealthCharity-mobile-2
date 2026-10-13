@@ -32,11 +32,8 @@ import {
     ReadAllFormOptions,
 } from "@/modules/forms/types";
 
-export const baseUrl =
-    process.env.EXPO_PUBLIC_API_URL ??
-    "https://backend.fundacjaperyskop.org/api/v1/";
-export const websocketUrl =
-    process.env.EXPO_PUBLIC_WEBSOCKET_URL ?? "wss://api.fundacjaperyskop.org";
+export const baseUrl = process.env.EXPO_PUBLIC_API_URL;
+export const websocketUrl = process.env.EXPO_PUBLIC_WEBSOCKET_URL;
 
 export const url = {
     login: {
@@ -106,9 +103,6 @@ export const url = {
         },
         delete({ id }: UpdateArticleOptions) {
             return `${baseUrl}article/${id}`;
-        },
-        changeStatus({ id }: UpdateArticleOptions) {
-            return `${baseUrl}article/${id}/change-status`;
         },
     },
     articleCategories: {
@@ -183,7 +177,6 @@ export const url = {
             const query = buildQuery(options);
             return `${baseUrl}message/${chatId}?${query}`;
         },
-
         connect(options: ConnectOptions) {
             const query = buildQuery(options);
             return `${websocketUrl}/ws-chat?${query}`;
@@ -192,7 +185,6 @@ export const url = {
             const query = buildQuery(options);
             return `${websocketUrl}/ws-unread-chats?${query}`;
         },
-        createChat: `${baseUrl}chat/`,
     },
 
     form: {

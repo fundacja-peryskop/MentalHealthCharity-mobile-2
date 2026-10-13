@@ -1,7 +1,8 @@
 ﻿import { queryOptions, UseQueryOptions } from "@tanstack/react-query";
-import { baseUrl, url } from "@/api";
+import { url } from "@/api";
 import { Article, ReadArticleOptions } from "../types";
 import handleApiError from "../../shared/helpers/handleApiError";
+import resolveBannerUrl from "../helpers/resolveBannerUrl";
 
 export const getArticleByIdQueryOptions = (
     options: ReadArticleOptions,
@@ -16,14 +17,14 @@ export const getArticleByIdQueryOptions = (
 
                 const data: Article = await response.json();
 
-                const transformedData: Article = {
-                    ...data,
-                    banner_url: baseUrl + data.banner_url,
-                };
-
                 if (!response.ok) {
                     await handleApiError(data);
                 }
+
+                const transformedData: Article = {
+                    ...data,
+                    banner_url: resolveBannerUrl(data.banner_url),
+                };
 
                 return transformedData;
             } catch (error) {

@@ -79,12 +79,15 @@ const parseSocketMessage = (
     rawData: WebSocketMessageEvent["data"],
     chat: Chat | undefined,
 ) => {
+    console.log("[WebSocket] Parsing raw data:", rawData);
     if (typeof rawData !== "string") {
+        console.log("[WebSocket] Raw data is not a string, skipping");
         return null;
     }
 
     try {
         const payload = JSON.parse(rawData) as IncomingSocketMessage;
+        console.log("[WebSocket] Parsed payload:", payload);
         const event = "event" in payload ? payload.event : undefined;
         const type = "type" in payload ? payload.type : undefined;
         const deleteMessageId =
@@ -96,6 +99,10 @@ const parseSocketMessage = (
             type === "delete";
 
         if (isDeleteInstruction && deleteMessageId) {
+            console.log(
+                "[WebSocket] Delete instruction detected for message:",
+                deleteMessageId,
+            );
             return {
                 type: SocketEventType.DELETE,
                 id: Number(deleteMessageId),
@@ -103,6 +110,7 @@ const parseSocketMessage = (
         }
 
         if (!("content" in payload) || !payload.content || !payload.id) {
+            console.log("[WebSocket] Missing required fields in payload");
             return null;
         }
 
@@ -202,10 +210,15 @@ export const useChat = (
             const token = await SecureStore.getItemAsync("token");
 
             if (!token || !chatId) {
+                console.log(
+                    "[WebSocket] Missing token or chatId, skipping connection",
+                );
                 return;
             }
 
-            setSocketUrl(url.chat.connect({ token, chat_id: chatId }));
+            const wsUrl = url.chat.connect({ token, chat_id: chatId });
+            console.log("[WebSocket] Connecting to:", wsUrl);
+            setSocketUrl(wsUrl);
         };
 
         void prepareSocketUrl();
@@ -230,24 +243,43 @@ export const useChat = (
 
     useEffect(() => {
         if (!socketUrl) {
+            console.log("[WebSocket] No socketUrl, skipping connection");
             return undefined;
         }
 
+        console.log("[WebSocket] Creating new WebSocket connection");
         setConnectionStatus("connecting");
         const socket = new WebSocket(socketUrl);
 
-        socket.onopen = () => setConnectionStatus("open");
-        socket.onclose = () => setConnectionStatus("closed");
-        socket.onerror = () => setConnectionStatus("error");
+        socket.onopen = () => {
+            console.log("[WebSocket] Connection opened");
+            setConnectionStatus("open");
+        };
+        socket.onclose = (event) => {
+            console.log(
+                "[WebSocket] Connection closed:",
+                event.code,
+                event.reason,
+            );
+            setConnectionStatus("closed");
+        };
+        socket.onerror = (error) => {
+            console.log("[WebSocket] Connection error:", error);
+            setConnectionStatus("error");
+        };
         socket.onmessage = (event) => {
+            console.log("[WebSocket] Message received:", event.data);
             const parsedMessage = parseSocketMessage(
                 event.data,
                 chatQuery.data,
             );
 
             if (!parsedMessage) {
+                console.log("[WebSocket] Failed to parse message");
                 return;
             }
+
+            console.log("[WebSocket] Parsed message:", parsedMessage);
 
             if (parsedMessage.type === SocketEventType.DELETE) {
                 setMessages((currentMessages) =>
@@ -264,6 +296,7 @@ export const useChat = (
         };
 
         return () => {
+            console.log("[WebSocket] Cleaning up connection");
             socket.close();
         };
     }, [chatQuery.data, socketUrl, upsertMessage]);

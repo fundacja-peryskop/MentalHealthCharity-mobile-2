@@ -1,4 +1,4 @@
-﻿import { User } from "../auth/types";
+import { User } from "../auth/types";
 import { DefaultPaginationOptions } from "../shared/types";
 import { ArticleRequiredRoles, ArticleStatus } from "./constants";
 
@@ -63,21 +63,10 @@ export interface UpdateArticleCategoryOptions {
     id: number;
 }
 
-export interface ChangeArticleStatusPayload {
-    status: ArticleStatus;
-    reject_message: string;
-    id: number;
-}
-
 export interface ArticleCategory {
     name: string;
     id: number;
     is_active: boolean;
-}
-
-export interface ArticleStatusOption {
-    key: ArticleStatus;
-    title: string;
 }
 
 export interface CreateArticleValues {
@@ -88,11 +77,6 @@ export interface CreateArticleValues {
     article_category_id: number | null;
     required_role: ArticleRequiredRoles;
     status: ArticleStatus;
-}
-
-export interface UpdateStatusFormValues {
-    status: ArticleStatus;
-    reject_message: string;
 }
 
 export interface Article {

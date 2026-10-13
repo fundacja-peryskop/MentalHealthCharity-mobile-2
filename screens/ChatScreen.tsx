@@ -14,6 +14,7 @@ import Loader from "@/modules/shared/components/Loader";
 import { useToast } from "@/modules/shared/components/Toast";
 import { Message } from "@/modules/chat/types";
 import { useChat } from "@/modules/chat/hooks/useChat";
+import AppBackground from "@/modules/shared/components/App-Background";
 
 const formatMessageDate = (date: string) => {
     return new Intl.DateTimeFormat("pl-PL", {
@@ -161,98 +162,100 @@ const ChatScreen = () => {
             className="flex-1 bg-slate-50"
             behavior={Platform.OS === "ios" ? "padding" : undefined}
         >
-            <View className="border-b border-slate-200 bg-white px-4 pb-4 pt-12">
-                <View className="flex-row items-center gap-3">
-                    <Pressable
-                        onPress={() => router.back()}
-                        className="h-10 w-10 items-center justify-center rounded-full bg-slate-100"
-                        accessibilityRole="button"
-                        accessibilityLabel="Wroc"
-                    >
-                        <Ionicons
-                            name="chevron-back"
-                            size={22}
-                            color="#0F172A"
-                        />
-                    </Pressable>
+            <AppBackground>
+                <View className="border-b border-slate-200 bg-white px-4 pb-4 pt-12">
+                    <View className="flex-row items-center gap-3">
+                        <Pressable
+                            onPress={() => router.back()}
+                            className="h-10 w-10 items-center justify-center rounded-full bg-slate-100"
+                            accessibilityRole="button"
+                            accessibilityLabel="Wroc"
+                        >
+                            <Ionicons
+                                name="chevron-back"
+                                size={22}
+                                color="#0F172A"
+                            />
+                        </Pressable>
 
-                    <View className="min-w-0 flex-1">
-                        <Text
-                            className="text-lg font-bold text-slate-950"
-                            numberOfLines={1}
-                        >
-                            {chat?.name ?? "Czat"}
-                        </Text>
-                        <Text
-                            className="text-xs text-slate-500"
-                            numberOfLines={1}
-                        >
-                            {participantNames}
-                        </Text>
+                        <View className="min-w-0 flex-1">
+                            <Text
+                                className="text-lg font-bold text-slate-950"
+                                numberOfLines={1}
+                            >
+                                {chat?.name ?? "Czat"}
+                            </Text>
+                            <Text
+                                className="text-xs text-slate-500"
+                                numberOfLines={1}
+                            >
+                                {participantNames}
+                            </Text>
+                        </View>
+
+                        <View className="items-end">
+                            <View
+                                className={`h-2.5 w-2.5 rounded-full ${
+                                    connectionStatus === "open"
+                                        ? "bg-primary"
+                                        : "bg-slate-400"
+                                }`}
+                            />
+                            <Text className="mt-1 text-[11px] text-slate-500">
+                                {connectionLabel[connectionStatus]}
+                            </Text>
+                        </View>
                     </View>
+                </View>
 
-                    <View className="items-end">
-                        <View
-                            className={`h-2.5 w-2.5 rounded-full ${
-                                connectionStatus === "open"
+                <FlatList
+                    ref={listRef}
+                    data={messages}
+                    keyExtractor={(item) => String(item.id)}
+                    renderItem={renderMessage}
+                    contentContainerClassName="px-4 py-4"
+                    onContentSizeChange={() =>
+                        listRef.current?.scrollToEnd({ animated: false })
+                    }
+                    ListEmptyComponent={
+                        <View className="items-center px-6 py-16">
+                            <Ionicons
+                                name="chatbubble-ellipses-outline"
+                                size={42}
+                                color="#94A3B8"
+                            />
+                            <Text className="mt-4 text-center text-base font-semibold text-slate-900">
+                                Brak wiadomosci
+                            </Text>
+                        </View>
+                    }
+                />
+
+                <View className="border-t border-slate-200 bg-white p-3">
+                    <View className="flex-row items-end gap-2">
+                        <TextInput
+                            value={messageText}
+                            onChangeText={setMessageText}
+                            multiline
+                            placeholder="Napisz wiadomosc..."
+                            className="max-h-32 flex-1 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-950"
+                        />
+                        <Pressable
+                            disabled={!messageText.trim() || isSendingMessage}
+                            onPress={handleSendMessage}
+                            className={`h-12 w-12 items-center justify-center rounded-full ${
+                                messageText.trim() && !isSendingMessage
                                     ? "bg-primary"
-                                    : "bg-slate-400"
+                                    : "bg-slate-300"
                             }`}
-                        />
-                        <Text className="mt-1 text-[11px] text-slate-500">
-                            {connectionLabel[connectionStatus]}
-                        </Text>
+                            accessibilityRole="button"
+                            accessibilityLabel="Wyslij wiadomosc"
+                        >
+                            <Ionicons name="send" size={20} color="#FFFFFF" />
+                        </Pressable>
                     </View>
                 </View>
-            </View>
-
-            <FlatList
-                ref={listRef}
-                data={messages}
-                keyExtractor={(item) => String(item.id)}
-                renderItem={renderMessage}
-                contentContainerClassName="px-4 py-4"
-                onContentSizeChange={() =>
-                    listRef.current?.scrollToEnd({ animated: false })
-                }
-                ListEmptyComponent={
-                    <View className="items-center px-6 py-16">
-                        <Ionicons
-                            name="chatbubble-ellipses-outline"
-                            size={42}
-                            color="#94A3B8"
-                        />
-                        <Text className="mt-4 text-center text-base font-semibold text-slate-900">
-                            Brak wiadomosci
-                        </Text>
-                    </View>
-                }
-            />
-
-            <View className="border-t border-slate-200 bg-white p-3">
-                <View className="flex-row items-end gap-2">
-                    <TextInput
-                        value={messageText}
-                        onChangeText={setMessageText}
-                        multiline
-                        placeholder="Napisz wiadomosc..."
-                        className="max-h-32 flex-1 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-950"
-                    />
-                    <Pressable
-                        disabled={!messageText.trim() || isSendingMessage}
-                        onPress={handleSendMessage}
-                        className={`h-12 w-12 items-center justify-center rounded-full ${
-                            messageText.trim() && !isSendingMessage
-                                ? "bg-primary"
-                                : "bg-slate-300"
-                        }`}
-                        accessibilityRole="button"
-                        accessibilityLabel="Wyslij wiadomosc"
-                    >
-                        <Ionicons name="send" size={20} color="#FFFFFF" />
-                    </Pressable>
-                </View>
-            </View>
+            </AppBackground>
         </KeyboardAvoidingView>
     );
 };
