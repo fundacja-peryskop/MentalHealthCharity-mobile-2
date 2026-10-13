@@ -1,0 +1,49 @@
+#!/bin/sh
+set -e
+
+GREEN="\033[0;32m"
+RED="\033[0;31m"
+BLUE="\033[0;34m"
+YELLOW="\033[1;33m"
+NC="\033[0m"
+
+log() {
+  echo "${BLUE}[$(date '+%H:%M:%S')]${NC} $1"
+}
+
+ok() {
+  echo "${GREEN}✔${NC} $1"
+}
+
+fail() {
+  echo "${RED}✖${NC} $1"
+  exit 1
+}
+
+run() {
+  NAME="$1"
+  CMD="$2"
+
+  log "$NAME..."
+  if sh -c "$CMD"; then
+    ok "$NAME"
+  else
+    fail "$NAME failed"
+  fi
+}
+
+echo "${YELLOW}🚦 Pre-commit checks started${NC}"
+
+# i18n
+run "🔍 i18n: extracting translations" "npm run i18n:extract"
+run "🌍 i18n: checking translations" "npm run check:translations"
+
+# Build 
+# run "🏗️ build: building app (iOS)" "npm run ios"
+# run "🏗️ build: building app (Android)" "npm run android"
+
+
+# Lint
+run "🧹 lint: linting" "npm run lint"
+
+echo "${GREEN}🎉 All checks passed. Commit allowed.${NC}"

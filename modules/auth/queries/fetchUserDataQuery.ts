@@ -1,27 +1,50 @@
-﻿import {User} from "../types"
-import * as SecureStore from 'expo-secure-store';
+﻿import { User } from "../types";
+import * as SecureStore from "expo-secure-store";
+import { ApiError } from "@/modules/shared/types";
+import { url } from "@/api";
 
-export const fetchUserDataQuery = async ():Promise<User> => {
+async function parseBody(response: Response) {
+    const text = await response.text();
+    if (!text) return null;
+
     try {
-        const token = SecureStore.getItemAsync("token")
-        const tokenType = SecureStore.getItemAsync("jwt_type")
+        return JSON.parse(text);
+    } catch {
+        return text;
+    }
+}
+
+const fetchUserDataQuery = async (): Promise<User> => {
+    try {
+        const [token, tokenType] = await Promise.all([
+            SecureStore.getItemAsync("token"),
+            SecureStore.getItemAsync("jwt_type"),
+        ]);
         if (!token || !tokenType) {
-            throw new Error("Brak tokenu.");
+            throw new ApiError("Missing token", 401);
         }
-        
-        const response = await fetch("http://localhost:8080/readUsersMe", {
+
+        console.log(url.users.readUsersMe);
+
+        const response = await fetch(url.users.readUsersMe, {
             headers: {
                 Authorization: `${tokenType} ${token}`,
             },
-            
-        })
-        const data = await response.json();
-        if (!response.ok){
-            throw new Error("")
+        });
+        const data = await parseBody(response);
+        console.log(data);
+
+        if (!response.ok) {
+            const message =
+                data?.detail ?? data?.message ?? response.statusText;
+            throw new ApiError(message, response.status, data);
         }
-        
-        return data
-    }catch (err){
-        throw err;
+
+        return data;
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        throw error;
     }
-}
+};
+
+export default fetchUserDataQuery;

@@ -1,9 +1,8 @@
-﻿import { SplashScreen } from 'expo-router';
-import {useSession} from "@/modules/auth/context/ctx";
+import { SplashScreen } from "expo-router";
+import { useUser } from "@/modules/auth/components/AuthContextProvider";
 
-
- function SplashScreenController() {
-    const { isLoading } = useSession();
+function SplashScreenController() {
+    const { isLoading } = useUser();
 
     if (!isLoading) {
         SplashScreen.hideAsync();
@@ -12,4 +11,4 @@ import {useSession} from "@/modules/auth/context/ctx";
     return null;
 }
 
-export default SplashScreenController
+export default SplashScreenController;

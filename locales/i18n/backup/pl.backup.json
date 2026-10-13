@@ -1,0 +1,625 @@
+{
+    "common": {
+        "main_screen": {
+            "hello": "Cześć, {{name}}!",
+            "subtitle": "Jak się dziś czujesz?",
+            "quick_actions": "Szybkie działania",
+            "breathing": "Oddychanie",
+            "journaling": "Dziennik",
+            "mood_tracker": "Nastrój",
+            "get_help": "Uzyskaj pomoc",
+            "daily_quote": "Cytat dnia"
+        },
+        "navigation": {
+            "home": "Strona główna",
+            "about": "O nas",
+            "contact": "Kontakt",
+            "my_account": "Moje konto",
+            "logout": "Wyloguj",
+            "articles": "Artykuły",
+            "chat_with_volunteer": "Otrzymaj pomoc",
+            "chat": "Czat",
+            "admin": "Zarządaj stroną"
+        },
+        "roles": {
+            "admin": "Administrator",
+            "volunteer": "Wolontariusz",
+            "user": "Użytkownik",
+            "redactor": "Redaktor",
+            "volunteer_supervisor": "Koordynator"
+        },
+        "welcome_screen": {
+            "start": "Zaczynamy!",
+            "header": "Darmowa pomoc psychologiczna",
+            "description": "Skorzystaj z darmowej pomocy wolontariusza, lub zostań wolontariuszem i rusz z nami w misję!"
+        },
+        "login_screen": {
+            "header": "Witaj ponownie!",
+            "description": "Zaloguj się na swoje konto",
+            "email": "Adres email",
+            "password": "Hasło",
+            "forgot_password": "Nie pamiętam hasła",
+            "no_account": "Nie masz konta?",
+            "register": "Zarejestruj się",
+            "login": "Zaloguj",
+            "return": "Powrót"
+        },
+        "register_screen": {
+            "header": "Utwórz nowe konto!",
+            "description": "Super że do nas dołączasz",
+            "username": "Nazwa użytkownika",
+            "email": "Adres email",
+            "password": "Hasło",
+            "confirm_password": "Powtórz hasło",
+            "have_account": "Masz już konto?",
+            "register": "Zarejsetruj się",
+            "login": "Zaloguj się",
+            "return": "Powrót",
+            "policy": "Zapoznałem się z regulaminem"
+        },
+        "reset_password_screen": {
+            "header": "Zapomniałeś hasła?",
+            "description": "Zresetuj swoje hasło, wpisz adres na który wyślemy wiadomość z linkiem",
+            "email": "Adres email",
+            "password": "Hasło",
+            "confirm_password": "Powtórz hasło",
+            "reset_password": "Zmień hasło",
+            "send_email": "Wyślij wiadomość",
+            "return": "Powrót",
+            "title": "Email wysłany",
+            "toast_description": "Sprawdź skrzynkę pocztową"
+        },
+
+        "submit": "Wyślij",
+        "join_us": "Zaloguj się",
+        "sign_up": "Zarejestruj się",
+        "search": "Wyszukaj...",
+        "login": "Zaloguj",
+        "comming_soon": "Wkrótce dostępne",
+        "saved": "Zapisano",
+        "create_new_account": "Załóż konto",
+        "try_again": "Spróbuj ponownie",
+        "preview": "Podgląd",
+        "sending": "Wysyłanie...",
+        "confirm": "Potwierdź",
+        "no_data": "Brak danych",
+        "make_changes_to_save": "Dokonaj zmian, aby zapisać",
+        "check_connected_chats": "Sprawdź połączone czaty",
+        "success": "Sukces",
+        "create": "Utwórz",
+        "change_pass": "Zmień hasło",
+        "unavailable_in_beta": "Niedostępne w wersji beta",
+        "active": "Aktywny",
+        "password": "Hasło",
+        "password_confirmation": "Potwierdź hasło",
+        "remove": "Usuń",
+        "disable": "Wyłącz",
+        "enable": "Włącz",
+        "inactive": "Nieaktywny",
+        "save": "Zapisz",
+        "created_at": "Utworzono {{date}}",
+        "cancel": "Anuluj",
+        "copied_to_clipboard": "Skopiowano do schowka",
+        "email": "Email",
+        "download": "Pobierz",
+        "go_to_profile": "Przejdź do profilu",
+        "edit": "Edytuj",
+        "id": "ID",
+        "not_found": "Ups! Nie znaleziono treści.",
+        "role": "Rola",
+        "is_assigned_to_chat": "Przypisany do czatu",
+        "yes": "Tak",
+        "next": "Dalej",
+        "cookies_policy": "Polityka cookies",
+        "cookies_message": "Ta strona korzysta z plików cookie, aby zapewnić najlepszą jakość korzystania z naszej witryny. Korzystając dalej z witryny wyrażasz zgodę na ich użycie. Dowiedz się więcej",
+        "accept_cookies": "Akceptuję",
+        "no": "Nie",
+        "compare_changes": {
+            "title": "Porównaj zmiany",
+            "old_value": "Stara wartość",
+            "new_value": "Nowa wartość",
+            "field": "Pole",
+            "no_changes": "Brak zmian"
+        }
+    },
+    "validation": {
+        "required": "To pole jest wymagane",
+        "passwords_must_match": "Hasła muszą być takie same",
+        "registration_failed": "Rejestracja nie powiodła się. Spróbuj ponownie.",
+        "min_one_uppercase": "Hasło musi zawierać co najmniej jedną wielką literę",
+        "invalid_email": "Podaj poprawny adres email",
+        "invalid_url": "Podaj poprawny adres URL",
+        "invalid_password": "Nieprawidłowe hasło",
+        "incorrect_password_format": "Hasło musi zawierać co najmniej 8 znaków",
+        "min_one_number": "Hasło musi zawierać co najmniej jedną cyfrę np. 1",
+        "password_confirmation": "Hasła muszą być takie same",
+        "first_name": "Imię musi zawierać co najmniej 2 znaki",
+        "last_name": "Nazwisko musi zawierać co najmniej 2 znaki",
+        "phone": "Podaj poprawny numer telefonu",
+        "age": {
+            "min": "Musisz mieć co najmniej 18 lat"
+        },
+        "email": {
+            "invalid": "Podaj poprawny adres email"
+        },
+        "max_size": "Plik jest za duży. Maksymalny rozmiar to {{size}}",
+        "invalid_file": "Plik powinien być w formacie {{type}}",
+        "name": {
+            "tooShort": "Imię musi mieć co najmniej 2 znaki."
+        },
+        "issueType": {
+            "min": "Wybierz co najmniej jedną opcję."
+        },
+        "description": {
+            "tooShort": "Opis musi zawierać co najmniej 10 znaków."
+        },
+
+        "consent": {
+            "required": "Musisz zaakceptować zgodę."
+        },
+        "message": "Wiadomość musi zawierać co najmniej 10 znaków"
+    },
+    "errors": {
+        "fail": "Błąd",
+        "failed_to_fetch_chat_note": "Wystąpił problem podczas wczytywania notatek. Spróbuj ponownie później",
+        "failed_to_create_report": "Wystąpił problem podczas tworzenia zgłoszenia.",
+        "failed_to_save_note": "Wystąpił problem podczas zapisywania notatki. Spróbuj ponownie później",
+        "unknown": "Wystąpił nieznany błąd. Spróbuj ponownie później",
+        "incorrect_email_or_password": "Nieprawidłowy email lub hasło",
+        "article_category_not_found": "Najpierw dodaj kategorię do artykułu",
+        "username_already_exists": "Użytkownik o tej nazwie już istnieje",
+        "article_category_with_that_name_already_exists": "Kategoria o tej nazwie już istnieje",
+        "article_category_in_use": "Błąd, nie można przeprowadzić tej operacji na kategorii, ponieważ wybrana kategoria jest używana przez jakiś artykuł.",
+        "failed_to_fetch_chat": "Wystąpił problem podczas wczytywania rozmowy. Spróbuj ponownie później"
+    },
+    "report": {
+        "modal_title": "Zgłoszenie",
+        "select_report_type": "Wybierz typ zgłoszenia",
+        "subject": "Temat",
+        "description": "Opis",
+        "change_volunteer": "Zmień wolontariusza",
+        "change_mentee": "Zmień podopiecznego",
+        "bug": "Błąd",
+        "abuse": "Nadużycie",
+        "crisis_situation": "Sytuacja kryzysowa",
+        "confirmation_modal_title": "Czy na pewno chcesz zamknąć zgłoszenie?",
+        "confirmation_modal_text": "Zgłoszenie zostanie zamknięte i nie będzie można go ponownie otworzyć. Czy na pewno chcesz zamknąć zgłoszenie jako rozwiązane?"
+    },
+    "chat": {
+        "conntecting": "Łączenie z rozmówcą...",
+        "open": "Połaczono",
+        "admin_chat": "Czat koordynacyjny",
+        "connection_closed": "Przerwano połączenie z rozmówcą. Sprawdź swoje połączenie internetowe. Spróbuj odświeżyć stronę",
+        "connection_closing": "Połączenie z rozmówcą zostało przerwane. Sprawdź swoje połączenie internetowe. Aby naprawić problem odśwież stronę",
+        "connection_connecting": "Łączenie z rozmówcą... Jeśli trwa to za długo - sprawdź swoje połączenie z internetem lub spróbuj odświeżyć stronę",
+        "connection_open": "Połączono z rozmówcą",
+        "connection_uninstantiated": "Nie można połączyć z rozmówcą. Sprawdź swoje połączenie internetowe. Spróbuj odświeżyć stronę",
+        "show_more_chats": "Lista czatów",
+        "contract_confirmed": "Kontrakt został potwierdzony",
+        "contract_confirmed_desc": "Kontrakt został potwierdzony. Nie można go już edytować.",
+        "remove_participant_success": "Uczestnik został usunięty",
+        "connection": {
+            "admin_hint": "Jesteś administratorem, ten komunikat jest może oznaczać, że nie jesteś dodany do czatu"
+        },
+        "about": {
+            "title": "Jak otrzymać pomoc?",
+            "subtitle": "W naszym serwisie znajdziesz darmowe wsparcie psychologiczne w formie czatu. Wystarczy, że wypełnisz krótki formularz, a my dobierzemy dla Ciebie odpowiedniego wolontariusza, który będzie Cię wspierał w trudnych chwilach. Wszystkie rozmowy są anonimowe i pełne empatii. Nie musisz się martwić o ocenę, krytykę czy zrozumienie. Jesteśmy tu po to, aby Ci pomóc.",
+            "tutorial": "Kliknij przycisk Dołącz Teraz, wypełnij formularz, poczekaj, aż przydzielimy Ci starannie dobranego wolontariusza i zacznij rozmowę. To takie proste!"
+        },
+        "edit_chat": "Edytuj czat",
+        "remove_from_chat": "Usuń z czatu",
+        "edit_chat_success": "Czat został zaktualizowany",
+        "closing": "Połaczenie jest przerwane... Sprawdź swoje połaczenie internetowe",
+        "closed": "Połaczenie zostało przerwane... Sprawdź swoje połaczenie internetowe",
+        "uninstantiated": "Nie można połączyć z rozmówcą. Spróbuj ponownie później",
+        "send": "Wyślij",
+        "create_new_chat": "Utwórz nowy czat",
+        "search_label": "Wyszukaj po nazwie lub członkach...",
+        "enter_message_label": "Wpisz wiadomość...",
+        "notes": "Notatki",
+        "create_chat_success": "Czat został utworzony",
+        "go_to_chat": "Przejdź do czatu",
+        "contract": "Kontrakt",
+        "report": "Zgłoś",
+        "add_participant_success": "Uczestnik został dodany",
+        "add_participant": "Dodaj uczestnika",
+        "note_title": "Notatki",
+        "customize": "Dostosuj",
+        "no_available_chats_found": "Nie znaleziono dostępnych czatów. Skontakuj się z administratorem",
+        "customize_chat": {
+            "title": "Dostosuj czat",
+            "desc": "Ta funkcja jest testowa i będzie rozszerzana w przyszłości"
+        },
+        "accept_contract": "Akceptuj kontrakt"
+    },
+    "auth": {
+        "reset_token_modal": {
+            "title": "Pomyślnie zarejestrowano!",
+            "subtitle": "To jedyna okazja, aby pobrać lub skopiować jednorazowy kod odzyskania konta. Jeśli zapomnisz hasła, to jedyna deska ratunku. Nigdy nie podawaj tego kodu nikomu.",
+            "copy": "Skopiuj kod odzyskania konta",
+            "download": "Pobierz kod odzyskania konta",
+            "copied": "Skopiowano kod odzyskania konta do schowka, pamiętaj, aby go zapisać w bezpiecznym miejscu.",
+            "downloaded": "Pobrano kod odzyskania konta na te urządzenie."
+        },
+        "reset_password": {
+            "title": "Zresetuj hasło",
+            "subtitle": "Wprowadź nowe hasło do swojego konta. Aby to zrobić wprowadź kod odzyskania konta, który otrzymałeś podczas rejestracji.",
+            "success": "Hasło zostało zresetowane. Zaloguj się na swoje konto."
+        }
+    },
+    "support_us": {
+        "title": "Pomóż nam rozwijać się i dotrzeć do większej liczby osób!",
+        "subtitle": "Fundacja Peryskop to projekt non-profit, który działa dzięki wsparciu wolontariuszy i darczyńców. Jeśli chcesz wesprzeć naszą działalność, możesz to zrobić na kilka sposobów.",
+        "options": {
+            "share": {
+                "copy": "Skopiuj link do schowka",
+                "title": "1) Udostępnij nasz projekt",
+                "subtitle": "Podziel się naszym projektem ze znajomymi i rodziną. Im więcej osób nas pozna, tym więcej osób możemy pomóc. Kliknij w poniższy przycisk, aby udostępnić nasz projekt w mediach społecznościowych."
+            },
+            "donate": {
+                "title": "2) Przekaż datek na nasze działania",
+                "subtitle": "Jeśli chcesz wesprzeć naszą działalność finansowo, możesz przekazać datek na nasze konto bankowe. Numer konta znajduje się pod spodem, można kliknąć, aby skopiować.",
+                "content": "Numer konta"
+            }
+        },
+        "no_available_chats_found": "Nie znaleziono dostępnych czatów. Skontakuj się z administratorem"
+    },
+    "tos": {
+        "title": "Regulamin",
+        "subtitle": "Zapoznaj się z regulaminem serwisu klikając w poniższe hiperłącza.",
+        "clause": "Klauzula informacyjna",
+        "privacy_policy": "Polityka prywatności",
+        "data_processing": "Zasady przetwarzania danych osobowych",
+        "terms": "Regulamin serwisu"
+    },
+    "profile": {
+        "settings_subtitle": "Informacje o Twoim koncie",
+        "settings_acc_name": "Nazwa konta: {{name}}",
+        "settings_acc_email": "Adres email: {{email}}",
+        "this_section_is_private": "Ta sekcja jest prywatna, nikt inny jej nie widzi.",
+        "description_subtitle": "O mnie",
+        "articles_subtitle": "Ostatnia aktywność",
+        "description_placeholder": "Wpisz coś o sobie...",
+        "empty_description_placeholder": "Ten użytkownik nie napisał jeszcze nic o sobie",
+        "change_avatar_title": "Zmień zdjęcie profilowe",
+        "profile_updated": "Profil zaktualizowany",
+        "change_avatar_label": "Bezpośredni link do zdjęcia",
+        "change_avatar_tutorial": "Aby zmienić zdjęcie profilowe, wklej bezpośredni link do zdjęcia w pole poniżej. Aby uzyskać link do zdjęcia, kliknij prawym przyciskiem myszy na zdjęcie, które chcesz użyć i wybierz opcję 'Kopiuj adres obrazu'."
+    },
+
+    "articles": {
+        "read_more": "Czytaj więcej",
+        "title": "Tworzymy przestrzeń bez tabu, dla Ciebie!",
+        "add_article": "Nowy artykuł",
+        "category_required": "Kategoria jest wymagana",
+        "more_articles": "Więcej artykułów",
+        "article_created": "Pomyślnie wysłano artykuł. Zaraz zostaniesz przekierowany.",
+        "send": "Wyślij artykuł",
+        "article_deleted_success": "Artykuł został usunięty",
+
+        "dashboard": {
+            "subtitle": "Zarządzaj artykułami",
+            "title": "W tej sekcji znajdziesz wszystkie Twoje artykuły, zarówno opublikowane, jak i te w trakcie tworzenia.",
+            "not_found": "Nie znaleziono artykułów w tej kategorii. Może czas dodać nowy?",
+            "draft": "Kontynuuj pisane, {{user}}!",
+            "draft_subtitle": "Twoje zapisane prace",
+            "rejected": "Odrzucone",
+            "corrected": "Edytowane i zredagowane",
+            "sent": "Wysłane do recenzji",
+            "published": "Opublikowane",
+            "deleted": "Usunięte"
+        },
+
+        "status": {
+            "published": "Opublikowany",
+            "draft": "Szkic",
+            "waiting_for_approval": "Oczekuje na zatwierdzenie",
+            "sent": "Wyślij do recenzji",
+            "rejected": "Odrzucony",
+            "deleted": "Usunięty",
+            "corrected": "Poprawiony"
+        },
+        "required_roles": {
+            "volunteer": "Wolontariusz i wyżej",
+            "supervisor": "Koordynator wolontariuszy i admin",
+            "admin": "Administrator",
+            "anyone": "Publiczne"
+        },
+        "create_new_category": {
+            "title": "Zarządzaj kategoriami",
+            "name_label": "Nazwa kategorii",
+            "category_list_title": "Lista kategorii"
+        },
+        "save_draft": "Zapisz szkic",
+        "manage_categories": "Zarządzaj kategoriami",
+
+        "manage": "Zarządzaj",
+        "form": {
+            "title": "Tytuł",
+            "upload_banner": "Dodaj zdjęcie",
+            "article_category_id": "Kategoria",
+            "video_url": "Link do wideo (opcjonalne)",
+            "remove_banner": "Usuń zdjęcie",
+            "required_role": "Wymagane uprawnienia",
+            "status": "Wyślij jako",
+            "change_banner": "Zmień zdjęcie",
+            "content": "Twoja treść..."
+        },
+        "subtitle": "W naszym serwisie znajdziesz artykuły na temat psychologii, które pomogą Ci zrozumieć siebie i innych. Wszystkie prace są autorstwa naszych wolontariuszy, którzy chcą pomóc Ci w trudnych chwilach."
+    },
+    "admin_screen": {
+        "user_list_subtitle": "Lista użytkowników",
+        "user_list_title": "Zarządzaj użytkownikami",
+        "chat_list_subtitle": "Lista czatów",
+        "chat_list_title": "Zarządzaj czatami"
+    },
+    "users": {
+        "edit_modal_title": "Edytuj użytkownika",
+        "full_name": "Imię",
+        "user_role": "Rola",
+        "is_assigned_to_chat": "Posiada chat",
+        "is_not_assigned_to_chat": "Nie posiada chatu",
+        "id": "ID",
+        "email": "Email",
+        "empty_full_name_warning": "Pozostawienia pustego pola Imię jest niepoprawne i powinno być używane tylko w uzasadnionych przypadkach. "
+    },
+    "footer": {
+        "social": "Znajdź nas na",
+        "about_us": "O nas",
+        "privacy_policy": "Polityka prywatności",
+        "terms_of_service": "Regulamin",
+        "contact": "Kontakt",
+        "rights_reserved": "Fundacja Peryskop - wszelkie prawa zastrzeżone"
+    },
+    "homepage": {
+        "choose_mentee_button": "Uzyskaj wsparcie",
+        "choose_volunteer_button": "Zostań wolontariuszem",
+        "title": "Darmowe i anonimowe wsparcie psychologiczne w formie czatu",
+        "chat_now": "Rozmawiaj teraz",
+
+        "desc": "Uzyskaj pomoc, lub zostań wolontariuszem już teraz",
+        "about_us": {
+            "learn_more_button": "Dowiedz się więcej",
+            "small_cards": [
+                {
+                    "title": "Wolontariusze",
+                    "desc": "Szkolimy wolontariuszy, oraz pomagamy im rozwijać się w obszarze niesienia pomocy psychologicznej"
+                },
+                {
+                    "title": "Osoby w kryzysie",
+                    "desc": "Oferujemy osobom w kryzysie darmowe wsparcie pełne uwagi i empatii, bez oceny"
+                },
+                {
+                    "title": "Baza wiedzy",
+                    "desc": "Tworzymy bazę wiedzy przy współpracy ze specjalistami dla tych, którzy lubią wiedzieć więcej"
+                }
+            ],
+            "cards": [
+                {
+                    "title": "Czym jest Fundacja Peryskop?",
+                    "subtitle": "O nas",
+                    "desc": "Pomysł na powstanie projektu narodził się w wyniku kryzysu osobistego i potrzeby wsparcia w trudnym czasie. Z doświadczenia wiemy, jak ogromną rolę odgrywają w takiej sytuacji towarzyszące nam osoby. Jesteśmy także świadomi potencjału kryjącego się w trudnych momentach życia, który, choć na początku niedostrzegalny, może stanowić przełom ku zmianie na lepsze. Fundację Peryskop współtworzymy z myślą o wszystkich, którzy pomimo dynamicznego rozwoju mediów społecznościowych i rosnącego zainteresowania psychologią w przestrzeni publicznej, w kryzysie psychicznym wciąż czują się pozostawieni sami sobie. Chcemy przestrzeni bez tabu, w której spotykamy się na najgłębszym poziomie. Wiemy, że posiadamy idealne warunki, by zadbać o dobrostan psychiczny osób takich jak my, bo tak naprawdę wszystkich nas łączą podobne troski i wyzwania, świadczące o naszym człowieczeństwie. Z psychologią jesteśmy za pan brat. Dołącz do nas, jeśli potrzebujesz pomocy lub chcesz pomagać. Rola, w którą się u nas wcielisz, nie musi pozostać na zawsze taka sama. Każdy z nas, bez wyjątku, podlega procesowi ciągłych zmian, a kryzys często okazuje się stanem przejściowym. Możemy tworzyć wspólnie unikalne miejsce, w którym osoby doświadczające trudnych emocji będą zaopiekowane przez naszych wolontariuszy, pozostających pod stałą opieką superwizyjną. Razem widzimy więcej, możemy więcej i jesteśmy lepiej przygotowani do stawiania czoła nieustannej podróży, jaką jest życie."
+                },
+                {
+                    "title": "Jak działamy",
+                    "subtitle": "Nasze cele",
+                    "desc": "Zalążek naszego projektu powstał przez Internet i także tu, w sieci, chcemy tworzyć naszą społeczność. Choć mieszkamy w różnych rejonach Polski, pracujemy razem nad wspólnym celem i wiemy, że skutecznie pomagać można także online. Dla niektórych właśnie taka forma może okazać się jedyną dostępną. Stworzyliśmy bezpieczną platformę w formie czatu przeznaczoną do kontaktu pomiędzy osobami będącymi w kryzysie a wolontariuszami niosącymi wsparcie. Istota takiej pomocy sprowadza się do rozmów jeden na jeden w regularnych odstępach czasu. Jeśli, podobnie jak my, uważasz, że nowe technologie mogą mieć także dobroczynny wpływ na zdrowie psychiczne, to witaj na pokładzie!"
+                }
+            ]
+        }
+    },
+    "admin": {
+        "reports": {
+            "subtitle": "Zgłoszenia",
+            "title": "Zarządzaj zgłoszeniami",
+            "text": "W tej sekcji znajdziesz zgłoszenia od użytkowników, które wymagają Twojej uwagi. Po rozstrzygnięciu zgłoszenie zostaje zamknięte."
+        }
+    },
+    "form": {
+        "reject": "Odrzuć zgłoszenie",
+        "next_step": "Przenieś na następny etap",
+        "manage_forms_title": "Zarządzaj rekrutacją",
+        "manage_forms_subtitle": "Zdecyduj co chcesz zrobić z tym zgłoszeniem. Możesz je odrzucić, lub przenieść na następny etap: {{step}}.",
+        "volunteer": {
+            "subtitle": [
+                "W celu dołączenia do naszego zespołu wolontariuszy, wypełnij krótki formularz, abyśmy mogli Cię lepiej poznać.",
+                "Potrzebujemy tej informacji, aby móc dopasować odpowiednich podopiecznych do Twojego poziomu zaawansowania.",
+                "Numer telefonu jest wymagany, abyśmy mogli skontaktować się z Tobą, gdy znajdziemy odpowiedniego podopiecznego.",
+                "Pochwal się swoimi motywami! Dlaczego chcesz do nas dołączyć, jakie masz oczekiwania i co chciałbyś osiągnąć?",
+                "Skąd dowiedziałeś się o naszej fundacji? Pomóż nam rozwijać się i dotrzeć do większej liczby osób!",
+                "Daj nam znać z którymi tematami nie chcesz się mierzyć. Możesz wybrać kilka.",
+                "Twoje zgłoszenie to cegiełka do budowy lepszej dostępności pomocy psychologicznej dla każdego. Powiadomimy Cię o dalszych krokach na {{contact}}. Dziękujemy za zaufanie!"
+            ],
+            "title": [
+                "Dołacz do grona wolontariuszy z misją, aby pomagać!",
+                "Twój poziom wykształcenia",
+                "Podaj numer telefonu",
+                "Dlaczego chcesz do nas dołączyć?",
+                "Skąd się o nas dowiedziałeś?",
+                "Czy są jakieś tematy z którymi nie chcesz się mierzyć?",
+                "Dziękujemy za wypełnienie formularza!"
+            ],
+            "age_label": "Ile masz lat?",
+            "education_label": "Wybierz poziom wykształcenia",
+            "phone_number_label": "Podaj numer telefonu",
+            "contact_label": "Preferowany kontakt",
+
+            "contact_options": {
+                "email": "Email",
+                "phone": "Telefon"
+            },
+            "prior_experience_label": "Czy masz doświadczenie w pomocy psychologicznej?",
+            "reason_label": "Dlaczego chcesz do nas dołączyć?",
+            "issues_to_avoid_label": "Problemy, które chcesz unikać",
+            "issues_to_avoid": {
+                "no": "Nie mam przeciwwskazań",
+                "depression": "Depresja",
+                "alcoholism": "Alkoholizm",
+                "drug_addiction": "Uzależnienie od narkotyków",
+                "self_harm": "Samookaleczenia",
+                "suicidal_thoughts": "Myśli samobójcze",
+                "eating_disorders": "Zaburzenia odżywiania",
+                "domestic_violence": "Przemoc domowa",
+                "homelessness": "Bezdomność",
+                "sexual_assault": "Przemoc seksualna",
+                "grief_loss": "Żałoba i strata",
+                "trauma": "Trauma",
+                "anxiety": "Lęk",
+                "burnout": "Wypalenie zawodowe",
+                "loneliness": "Samotność"
+            },
+            "prior_experience": {
+                "yes_professional": "Tak, zawodowe",
+                "yes_personal": "Tak, niezawodowe",
+                "no": "Nie"
+            },
+            "education": {
+                "elementary": "Podstawowe",
+                "high_school": "Średnie",
+                "bachelor": "Licencjat",
+                "master": "Magister",
+                "phd": "Doktor"
+            }
+        },
+        "mentee": {
+            "subtitle": [
+                "Dziękujemy za Twoje zaufanie. Wypełnij krótki formularz, aby uzyskać pomoc. Dołącz do nas i otrzymaj darmowe wsparcie, które działa dzięki wolontariuszom z całej Polski. To pierwszy krok ku zmianie na lepsze",
+                "Na ten adres email wyślemy Ci informacje, gdy znajdziemy dla Ciebie odpowiedniego wolontariusza.",
+                "Wybierz jak najlepiej rodzaj problemu, abyśmy mogli dopasować Ci najlepszego wolontariusza! Możesz wybrać kilka.",
+                "Opisz jak najlepiej swój problem, abyśmy mogli dopasować Ci najlepszego wolontariusza!",
+                "Skąd dowiedziałeś się o naszej fundacji? Pomóż nam rozwijać się i dotrzeć do większej liczby osób!",
+                "To wszystko! Już wkrótce otrzymasz informacje na temat dalszych kroków na {{contact}} gdy znajdziemy dla Ciebie odpowiedniego wolontariusza. Dziękujemy za zaufanie!"
+            ],
+            "title": [
+                "Otrzymaj darmowe wsparcie",
+                "Kontakt",
+                "Wybierz rodzaj problemu",
+                "Opisz swój problem",
+                "Skąd się o nas dowiedziałeś?",
+                "Dziękujemy za wypełnienie formularza!"
+            ],
+            "subtitle_new_user": [
+                "Dziękujemy za Twoje zaufanie. Wypełnij krótki formularz, aby uzyskać pomoc realizowaną przez wolontariuszy z całego świata.",
+                "Na ten adres email wyślemy Ci informacje, gdy znajdziemy dla Ciebie odpowiedniego wolontariusza.",
+                "Wybierz jak najlepiej rodzaj problemu, abyśmy mogli dopasować Ci najlepszego wolontariusza! Możesz wybrać kilka.",
+                "Opisz jak najlepiej swój problem, abyśmy mogli dopasować Ci najlepszego wolontariusza!",
+                "Musisz utworzyć konto, aby dołączyć i korzystać w pełni z naszych usług",
+                "To wszystko! Już wkrótce otrzymasz informacje na temat dalszych kroków na {{contact}} gdy znajdziemy dla Ciebie odpowiedniego wolontariusza. Dziękujemy za zaufanie!"
+            ],
+            "title_new_user": [
+                "Otrzymaj darmowe wsparcie",
+                "Kontakt",
+                "Wybierz rodzaj problemu",
+                "Opisz swój problem",
+                "Zarejestruj się, aby dołączyć do zespołu podopiecznych!",
+                "Dziękujemy za wypełnienie formularza!"
+            ],
+            "name_label": "Podaj imię, ksywkę lub jak mamy się do Ciebie zwracać?",
+            "contact_label": "Preferowany kontakt",
+
+            "contact_options": {
+                "email": "Email",
+                "phone": "Telefon",
+                "messenger": "Messenger"
+            },
+            "issue_type_label": "Rodzaj problemu",
+            "issue_type": {
+                "academic": "Akademicki",
+                "personal": "Osobisty",
+                "career": "Zawodowy"
+            },
+            "contact_detail": {
+                "email": "Podaj adres email",
+                "phone": "Podaj numer telefonu"
+            },
+            "issue_description_label": "Opisz swój problem"
+        },
+        "referral_source_label": "Skąd się o nas dowiedziałeś?",
+
+        "referral_source_options": {
+            "friend": "Znajomy",
+            "social_media": "Media społecznościowe",
+            "google": "Google"
+        },
+        "consent_label": "Oświadczam, iż zostałem/am poinformowany/a...",
+        "back": "Wróć",
+        "next": "Dalej",
+        "submit": "Wyślij",
+        "homepage": "Powrót na stronę główną",
+        "retry": "Kliknij tutaj, aby wypełnić formularz jeszcze raz"
+    },
+    "not_found_screen": {
+        "title": "Ups! Nie znaleziono podstrony.",
+        "subtitle": "Strona, której szukasz, nie istnieje lub została przeniesiona. Sprawdź, czy adres URL jest poprawny lub wróć na stronę główną."
+    },
+    "manage_articles": {
+        "title": "Publikuj treści, redaguj i zarządzaj",
+        "subtitle": "Zarządzaj artykułami",
+        "modal_title": "Publikuj lub odrzuć",
+        "article_status_changed": "Status artykułu został zmieniony",
+        "status": {
+            "rejected": "Odrzuć",
+            "published": "Opublikuj"
+        },
+        "fields": {
+            "reject_message": "Powód odrzucenia (opcjonalne)",
+            "status": "Status"
+        }
+    },
+    "manage_mentee_forms": {
+        "title": "Dodaj nowych podopiecznych łącząc ich z wolontariuszami",
+        "subtitle": "Zarządzaj formularzami podopiecznych"
+    },
+    "manage_volunteer_forms": {
+        "title": "Rekrutuj nowych wolontariuszy",
+        "subtitle": "Zarządzaj formularzami wolontariuszy",
+        "steps": [
+            "Sprawdź formularz",
+            "Wyślij mail o terminie rozmowy",
+            "Ustal termin rozmowy",
+            "Wyślij umowę",
+            "Podpisz umowę",
+            "Wyślij podręcznik",
+            "Szkolenie i nadanie roli",
+            "Przyporządkuj do podopiecznego",
+            "Przyporządkowany - interwizja"
+        ]
+    },
+    "form_sorting": {
+        "min_stage": "Od najmniejszego etapu",
+        "max_stage": "Od największego etapu",
+        "newest": "Od najnowszych",
+        "oldest": "Od najstarszych"
+    },
+    "manage_volunteer_mentee": {
+        "steps": ["Sprawdź formularz i dodaj do czatu", "Nadzór czatu"]
+    },
+    "forms_fields": {
+        "source": "Skąd nas poznał",
+        "contacts": "Preferowana forma kontaktu",
+        "description": "Opis",
+        "name": "Imię",
+        "note": "Notatka",
+        "interview_description": "Opis po rozmowie rekrutacyjnej",
+        "work_area": "Obszar pracy",
+        "availability": "Dostępność czasowa",
+        "email": "Email",
+        "actions": "Akcje",
+        "show_form": "Zobacz formularz",
+        "manage": "Zarządzaj",
+        "role": "Rola",
+        "progress": "Etap",
+        "age": "Wiek",
+        "phone": "Numer telefonu",
+        "creation_date": "Data wysłania",
+        "themes": "Problemy",
+        "reason": "Powód dołączenia",
+        "did_help": "Czy pomogał wcześniej",
+        "education": "Wykształcenie"
+    },
+    "form_status": {
+        "accepted": "Zaakceptowany",
+        "rejected": "Odrzucony",
+        "waited": "Oczekujący"
+    }
+}

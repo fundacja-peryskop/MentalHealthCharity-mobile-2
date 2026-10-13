@@ -1,8 +1,6 @@
 import RegisterScreen from "@/screens/RegisterScreen";
-import {ReactElement} from "react";
+import { ReactElement } from "react";
 
 export default function SignUp(): ReactElement {
-    return (
-        <RegisterScreen />
-    )
+    return <RegisterScreen />;
 }
