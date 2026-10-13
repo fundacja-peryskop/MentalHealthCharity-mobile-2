@@ -43,4 +43,4 @@ yarn-error.*
 
 app-example
 .env
-.npmrc
+
